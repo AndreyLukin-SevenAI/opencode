@@ -1,0 +1,1 @@
+- whenever you run bun commands, run them with timeout to ensure they have an ending

@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__serena__list_dir",
+      "mcp__serena__find_file",
+      "mcp__serena__get_symbols_overview",
+      "mcp__serena__find_symbol",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "mcp__serena__create_text_file",
+      "mcp__serena__search_for_pattern",
+      "WebFetch(domain:api.github.com)",
+      "mcp__serena__read_file",
+      "mcp__serena__replace_regex",
+      "mcp__serena__execute_shell_command",
+      "mcp__serena__replace_symbol_body",
+      "Bash(bun run dev:*)",
+      "Bash(timeout:*)",
+      "WebFetch(domain:gofastmcp.com)",
+      "Bash(curl:*)",
+      "Bash(bun run:*)",
+      "Bash(bun:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "serena"
+  ]
+}

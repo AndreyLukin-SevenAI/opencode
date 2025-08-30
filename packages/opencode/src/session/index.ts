@@ -39,7 +39,7 @@ import { SystemPrompt } from "./system"
 import { FileTime } from "../file/time"
 import { MessageV2 } from "./message-v2"
 import { LSP } from "../lsp"
-import { ReadTool } from "../tool/read"
+import { SerenaReadTool } from "../serena/tools"
 import { mergeDeep, pipe, splitWhen } from "remeda"
 import { ToolRegistry } from "../tool/registry"
 import { Plugin } from "../plugin"
@@ -526,7 +526,7 @@ export namespace Session {
                   }
                 }
                 const args = { filePath, offset, limit }
-                const result = await ReadTool.init().then((t) =>
+                const result = await SerenaReadTool.init().then((t) =>
                   t.execute(args, {
                     sessionID: input.sessionID,
                     abort: new AbortController().signal,

@@ -1,30 +1,32 @@
 import z from "zod"
 import { BashTool } from "./bash"
-import { EditTool } from "./edit"
-import { GlobTool } from "./glob"
-import { GrepTool } from "./grep"
-import { ListTool } from "./ls"
 import { PatchTool } from "./patch"
-import { ReadTool } from "./read"
 import { TaskTool } from "./task"
 import { TodoWriteTool, TodoReadTool } from "./todo"
 import { WebFetchTool } from "./webfetch"
-import { WriteTool } from "./write"
 import { InvalidTool } from "./invalid"
+import { 
+  SerenaEditTool,
+  SerenaGlobTool,
+  SerenaGrepTool,
+  SerenaListTool,
+  SerenaReadTool,
+  SerenaWriteTool
+} from "../serena/tools"
 import type { Agent } from "../agent/agent"
 
 export namespace ToolRegistry {
   const ALL = [
     InvalidTool,
     BashTool,
-    EditTool,
+    SerenaEditTool,
     WebFetchTool,
-    GlobTool,
-    GrepTool,
-    ListTool,
+    SerenaGlobTool,
+    SerenaGrepTool,
+    SerenaListTool,
     PatchTool,
-    ReadTool,
-    WriteTool,
+    SerenaReadTool,
+    SerenaWriteTool,
     TodoWriteTool,
     TodoReadTool,
     TaskTool,

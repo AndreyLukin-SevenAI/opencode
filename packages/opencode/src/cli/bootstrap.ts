@@ -5,6 +5,7 @@ import { LSP } from "../lsp"
 import { Plugin } from "../plugin"
 import { Share } from "../share/share"
 import { Snapshot } from "../snapshot"
+import { Serena } from "../serena"
 
 export async function bootstrap<T>(input: App.Input, cb: (app: App.Info) => Promise<T>) {
   return App.provide(input, async (app) => {
@@ -14,6 +15,14 @@ export async function bootstrap<T>(input: App.Input, cb: (app: App.Info) => Prom
     ConfigHooks.init()
     LSP.init()
     Snapshot.init()
+    
+    // Initialize Serena MCP client
+    try {
+      await Serena.init()
+    } catch (error) {
+      console.warn("Failed to initialize Serena MCP client:", error)
+      // Continue without Serena - tools will gracefully degrade
+    }
 
     return cb(app)
   })
